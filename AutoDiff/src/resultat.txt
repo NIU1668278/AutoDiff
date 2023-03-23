@@ -1,0 +1,20 @@
+sin(pi/2 + x^2) + 3x^2, x0 = 2.0
+real
+f(2.0) = 11.346356379136388
+f'(2.0) = 15.027209981231714
+calculat
+f(2.0) = 11.346356379136388
+f'(2.0) = 15.027209981231714
+diferencia valor 0.0
+diferencia derivada 0.0
+derivada per diferencies finites
+per epsilon 1.0E-6,15.027218969621003, diferencia -8.98838928975465E-6
+per epsilon 1.0E-8,15.027209876450343, diferencia 1.0478137113523189E-7
+per epsilon 1.0E-10,15.027215027885177, diferencia -5.0466534631254945E-6
+per epsilon 1.0E-12,15.027978861326119, diferencia -7.688800944052332E-4
+
+Màxims i mínims de f(x)=x^2(sin(x)^2+cos x):
+Màxim proper a x=2: x=1.638445826888934
+Mínim proper a x=2: x=3.3340793122718866
+Màxim proper a x=10: x=11.685705920971378
+Mínim proper a x=10: x=9.494649785438982
