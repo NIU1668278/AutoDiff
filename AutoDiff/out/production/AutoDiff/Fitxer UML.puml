@@ -1,0 +1,96 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface Expression{
++ {abstract}evaluate (DualNumber) : (DualNumber)
+}
+
+class Constant implements Expression {
+- value : double
++ Constant (double)
++ evaluate (DualNumber) : DualNumber
+}
+
+class X implements Expression {
++ X ()
++ evaluate (DualNumber) : DualNumber
+}
+
+class Cos implements Expression {
+- expr : Expression
++ Cos (Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Sin implements Expression {
+- expr : Expression
++ Sin (Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+Abstract BinaryOperator implements Expression {
+# left : Expression
+# right : Expression
++ BinaryOperator (Expression, Expression)
+}
+
+class Pow implements Expression {
+- expr : Expression
+- exponent : double
++ Pow (Expression, double)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Exp implements Expression {
+- expr : Expression
++ Exp (Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Log implements Expression {
+- expr : Expression
++ Exp (Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Add extends BinaryOperator {
++ Add (Expression,Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Substract extends BinaryOperator {
++ Substract (Expression,Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Multiply extends BinaryOperator {
++ Multiply (Expression,Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class Divide extends BinaryOperator {
++ Divide (Expression,Expression)
++ evaluate (DualNumber) : DualNumber
+}
+
+class DualNumber {
++ u : double
++ uprime : double
++ DualNumber (double, double)
++ toString () : String
+}
+
+class Main {
+- {static} f (double) : double
+- {static} df (double) : double
+- {static} g_desc_asc (double, double, int, int) : double
++ {static} main (String[] args)
+}
+
+Expression "1" <--o Sin : expr
+Expression "1" <--o Pow : expr
+Expression "1" <--o Cos : expr
+Expression "1" <--o Log : expr
+Expression "1" <--o Exp : expr
+Expression "2" <--o BinaryOperator : left,right
+@enduml
